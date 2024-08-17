@@ -2,4 +2,14 @@
 <resources>
 
     <style name="Theme.AfraaGPSTracker" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.AfraaGPSTracker.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background to black -->
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
+             drawable. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
+        <!-- Set the theme of the Activity that follows your splash screen. -->
+        <item name="postSplashScreenTheme">@style/Theme.AfraaGPSTracker</item>
+    </style>
+
 </resources>

@@ -69,7 +69,7 @@ dependencies {
     implementation libs.androidx.core.splashscreen
     implementation libs.ui
     implementation libs.material
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4-android:1.6.8"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation libs.androidx.datastore.preferences
+    androidTestImplementation libs.androidx.ui.test.junit4.android
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
 }

@@ -1,4 +1,4 @@
-package com.bornahoosh.afraagpstracker.ui.theme
+package com.bornahoosh.afraagpstracker.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

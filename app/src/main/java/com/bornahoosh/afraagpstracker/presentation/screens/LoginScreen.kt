@@ -1,5 +1,5 @@
 // LoginScreen.kt
-package com.bornahoosh.afraagpstracker.screens
+package com.bornahoosh.afraagpstracker.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -10,7 +10,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import com.bornahoosh.afraagpstracker.LoginViewModel
 
 @Composable

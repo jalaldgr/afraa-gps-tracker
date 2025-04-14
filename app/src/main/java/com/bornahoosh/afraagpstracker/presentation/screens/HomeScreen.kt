@@ -1,6 +1,6 @@
 
 // HomeScreen.kt
-package com.bornahoosh.afraagpstracker.screens
+package com.bornahoosh.afraagpstracker.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button

@@ -1,4 +1,4 @@
-package com.bornahoosh.afraagpstracker.ui.theme
+package com.bornahoosh.afraagpstracker.presentation.theme
 
 import android.app.Activity
 import android.os.Build

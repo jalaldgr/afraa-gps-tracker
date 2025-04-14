@@ -3,22 +3,12 @@ package com.bornahoosh.afraagpstracker
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.bornahoosh.afraagpstracker.screens.LoginScreen
-import com.bornahoosh.afraagpstracker.screens.HomeScreen
-import com.bornahoosh.afraagpstracker.ui.theme.AfraaGPSTrackerTheme
+import com.bornahoosh.afraagpstracker.presentation.LoginScreen
+import com.bornahoosh.afraagpstracker.presentation.HomeScreen
+import com.bornahoosh.afraagpstracker.presentation.theme.AfraaGPSTrackerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.bornahoosh.afraagpstracker.LoginViewModel
+import com.bornahoosh.afraagpstracker.presentation.login.LoginViewModel
 
 @Composable
 fun LoginScreen(onLoginSuccess: () -> Unit) {

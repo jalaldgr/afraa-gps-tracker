@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.AfraaGPSTracker" parent="android:Theme.Material.Light.NoActionBar" />
-    <style name="Theme.AfraaGPSTracker.Starting" parent="Theme.SplashScreen">
-        <!-- Set the splash screen background to black -->
+    <!-- تم اصلی برای اپلیکیشن -->
+    <style name="Theme.AfraaGPSTracker" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- اینجا می‌توانید رنگ‌ها، فونت‌ها و سایر تنظیمات را سفارشی کنید -->
+    </style>
+
+    <!-- تم مخصوص برای صفحه Splash -->
+    <style name="Theme.AfraaGPSTracker.Starting" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Set the splash screen background color -->
         <item name="windowSplashScreenBackground">@android:color/white</item>
-        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
-             drawable. -->
+        <!-- Set the splash screen icon -->
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
-        <!-- Set the theme of the Activity that follows your splash screen. -->
+        <!-- تم بعد از صفحه Splash -->
         <item name="postSplashScreenTheme">@style/Theme.AfraaGPSTracker</item>
     </style>
 

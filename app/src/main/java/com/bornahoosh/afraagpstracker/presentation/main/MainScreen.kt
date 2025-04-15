@@ -1,0 +1,67 @@
+package com.bornahoosh.afraagpstracker.presentation.main
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.bornahoosh.afraagpstracker.presentation.components.AppTopBar
+import com.bornahoosh.afraagpstracker.presentation.components.BottomNavBar
+import com.bornahoosh.afraagpstracker.presentation.devices.DevicesScreen
+import com.bornahoosh.afraagpstracker.presentation.history.HistoryScreen
+import com.bornahoosh.afraagpstracker.presentation.home.MapScreen
+import com.bornahoosh.afraagpstracker.presentation.operations.OperationsScreen
+
+@Composable
+fun MainScreen(
+    rootNavController: NavHostController // برای ناوبری از سطح بالا مثلاً لاگ‌اوت
+) {
+    val navController = rememberNavController()
+    val currentBackStack = navController.currentBackStackEntryAsState()
+    val currentRoute = currentBackStack.value?.destination?.route ?: "home"
+
+    Scaffold(
+        topBar = {
+            AppTopBar(
+                title = when (currentRoute) {
+                    "home" -> "خانه"
+                    "history" -> "تاریخچه"
+                    "operations" -> "عملیات"
+                    "devices" -> "دستگاه‌ها"
+                    else -> "Afraa GPS"
+                },
+//                onMenuClick = {
+//                    // TODO: دراور یا اکشن دیگر
+//                },
+//                onSettingsClick = {
+//                    // TODO: تنظیمات یا لاگ‌اوت
+//                }
+            )
+        },
+        bottomBar = {
+            BottomNavBar(navController)
+        }
+    ) { innerPadding ->
+        Box(modifier = Modifier.padding(innerPadding)) {
+            NavHost(navController = navController, startDestination = "home") {
+                composable("home") {
+                    MapScreen()
+                }
+                composable("history") {
+                    HistoryScreen()
+                }
+                composable("operations") {
+                    OperationsScreen()
+                }
+                composable("devices") {
+                    DevicesScreen()
+                }
+            }
+        }
+    }
+}

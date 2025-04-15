@@ -1,9 +1,10 @@
-package com.bornahoosh.afraagpstracker
+package com.bornahoosh.afraagpstracker.presentation.login
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.bornahoosh.afraagpstracker.LoginRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {

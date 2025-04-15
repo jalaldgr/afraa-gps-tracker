@@ -18,7 +18,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AfraaGPSTracker">
+            android:theme="@style/Theme.AfraaGPSTrackerTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

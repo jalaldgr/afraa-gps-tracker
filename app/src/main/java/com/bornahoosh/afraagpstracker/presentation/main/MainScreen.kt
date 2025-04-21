@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -19,11 +20,11 @@ import com.bornahoosh.afraagpstracker.presentation.operations.OperationsScreen
 
 @Composable
 fun MainScreen(
-    rootNavController: NavHostController // برای ناوبری از سطح بالا مثلاً لاگ‌اوت
+    rootNavController: NavHostController
 ) {
     val navController = rememberNavController()
-    val currentBackStack = navController.currentBackStackEntryAsState()
-    val currentRoute = currentBackStack.value?.destination?.route ?: "home"
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route ?: "home"
 
     Scaffold(
         topBar = {
@@ -34,13 +35,9 @@ fun MainScreen(
                     "operations" -> "عملیات"
                     "devices" -> "دستگاه‌ها"
                     else -> "Afraa GPS"
-                },
-//                onMenuClick = {
-//                    // TODO: دراور یا اکشن دیگر
-//                },
-//                onSettingsClick = {
-//                    // TODO: تنظیمات یا لاگ‌اوت
-//                }
+                }
+                // می‌تونی اینجا دکمه لاگ‌اوت یا تنظیمات رو اضافه کنی
+                // onSettingsClick = { rootNavController.navigate("login") }
             )
         },
         bottomBar = {
@@ -48,19 +45,14 @@ fun MainScreen(
         }
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
-            NavHost(navController = navController, startDestination = "home") {
-                composable("home") {
-                    MapScreen()
-                }
-                composable("history") {
-                    HistoryScreen()
-                }
-                composable("operations") {
-                    OperationsScreen()
-                }
-                composable("devices") {
-                    DevicesScreen()
-                }
+            NavHost(
+                navController = navController,
+                startDestination = "home"
+            ) {
+                composable("home") { MapScreen() }
+                composable("history") { HistoryScreen() }
+                composable("operations") { OperationsScreen() }
+                composable("devices") { DevicesScreen() }
             }
         }
     }

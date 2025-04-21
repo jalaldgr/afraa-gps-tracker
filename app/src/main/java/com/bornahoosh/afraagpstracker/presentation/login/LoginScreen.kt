@@ -6,16 +6,18 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.bornahoosh.afraagpstracker.presentation.login.LoginViewModel
 
 @Composable
-fun LoginScreen(onLoginSuccess: () -> Unit) {
-    val context = LocalContext.current
-    val viewModel: LoginViewModel = viewModel()  // استفاده از ViewModel بدون فکتوری
+fun LoginScreen(
+    onLoginSuccess: () -> Unit,
+    viewModel: LoginViewModel = hiltViewModel()
+) {
+    val loginViewModel: LoginViewModel = viewModel()  // استفاده از ViewModel بدون فکتوری
 
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -52,7 +54,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
         Button(
             onClick = {
                 // فراخوانی متد ورود
-                viewModel.login(username, password) {
+                loginViewModel.login(username, password) {
                     onLoginSuccess()  // در صورت موفقیت، صفحه خانه نمایش داده می‌شود
                 }
             },

@@ -3,13 +3,16 @@ package com.bornahoosh.afraagpstracker.presentation.login
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bornahoosh.afraagpstracker.LoginRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-
-class LoginViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository = LoginRepository(application.applicationContext)
+import javax.inject.Inject
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val repository: LoginRepository
+) : ViewModel() {
 
     // متغیر برای ذخیره توکن
     var token: String? = null

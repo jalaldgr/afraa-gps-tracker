@@ -7,7 +7,9 @@ import androidx.navigation.compose.rememberNavController
 import com.bornahoosh.afraagpstracker.navigation.AppNavGraph
 
 import com.bornahoosh.afraagpstracker.presentation.theme.AfraaGPSTrackerTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

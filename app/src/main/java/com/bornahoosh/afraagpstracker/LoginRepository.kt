@@ -34,7 +34,7 @@ class LoginRepository(private val context: Context) {
     suspend fun login(username: String, password: String): String? {
         return withContext(Dispatchers.IO) {
             try {
-                val url = URL("http://192.168.1.3:8000/api/login/")
+                val url = URL("https://afragps.com/api/login/")
                 val conn = url.openConnection() as HttpURLConnection
                 conn.requestMethod = "POST"
                 conn.setRequestProperty("Content-Type", "application/json")
